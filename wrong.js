@@ -1,3 +1,34 @@
+document.querySelector("#addBtn").addEventListener("click",function () {
+  let addTxt = document.querySelector("#addTxt");
+  let storage = localStorage.getItem("text");
+  // let myArry;
+  if (storage == null) {
+      myArry = [] ;
+  }else{
+      myArry = JSON.parse(storage);
+  };
+
+  // let addTxt = document.querySelector("#addTxt");
+  // let inputBoxValue = addTxt.value;
+  // myArry.push(inputBoxValue);
+  // localStorage.setItem("text",JSON.stringify(myArry));
+
+  // console.log(myArry);
+  Array.from(myArry).push(addTxt.value);
+  localStorage.setItem("text",JSON.stringify(myArry));
+  addTxt.value = "";
+  console.log(myArry);
+
+
+  // ourBox.push(addTxt.value);
+  // addTxt.value = "";
+  // localStorage.setItem("text", JSON.stringify(ourBox));
+
+
+});
+
+
+
 function greetingUsers() {
     let h1 = document.createElement("h1");
     let text = document.createTextNode("Welcome");
